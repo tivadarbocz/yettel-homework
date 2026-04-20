@@ -57,7 +57,7 @@ The system follows a microservice architecture where the **Digital Gateway** act
 
 * **digital-gateway-service**
 
-  * Acts as a façade for frontend clients (web, mobile, console)
+  * Acts as a facade for frontend clients (web, mobile, console)
   * Adapts and filters responses based on platform-specific needs
   * Handles cross-cutting concerns such as error handling and tracing
 
