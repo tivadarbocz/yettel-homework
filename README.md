@@ -63,7 +63,92 @@ The system follows a microservice architecture where the **Digital Gateway** act
 
 ![Flowchart](docs/request_flow_diagram.png)
 ---
+## Digital Gateway API
 
+The **Digital Gateway Service** acts as a simplified Backend-for-Frontend (BFF) layer between client applications (web, mobile, console) and the downstream **Customer Management Service**.
+
+Its primary responsibilities are:
+
+* exposing **frontend-optimized APIs**
+* **hiding the complexity** of the TM Forum–based data model
+* providing **platform-specific responses**
+
+---
+
+### Endpoint
+
+```http
+GET /api/v1/customers/{id}
+```
+
+#### Headers
+
+| Header       | Description                                       | Default |
+| ------------ | ------------------------------------------------- | ------- |
+| `X-Platform` | Target platform type (`MOBILE`, `CONSOLE`, `WEB`) | `WEB`   |
+
+---
+
+### Response Shaping
+
+The Gateway returns **different response structures** depending on the client platform.
+
+This ensures:
+
+* minimal payload for mobile clients
+* richer data for web/console clients
+* better performance and flexibility
+
+---
+
+### Response Types
+
+#### MobileCustomerResponse (lightweight)
+
+Designed for low bandwidth and fast rendering.
+
+```json
+{
+  "id": "123",
+  "name": "John Doe"
+}
+```
+
+---
+
+#### ConsoleCustomerResponse (medium detail)
+
+```json
+{
+  "id": "123",
+  "name": "John Doe",
+  "type": "Customer",
+  "engagedParty": {
+    "id": "500",
+    "type": "Organization"
+  }
+}
+```
+
+---
+
+#### WebCustomerResponse (full detail)
+
+```json
+{
+  "id": "123",
+  "name": "John Doe",
+  "type": "Customer",
+  "description": "Premium customer",
+  "engagedParty": {
+    "id": "500",
+    "type": "Organization",
+    "name": "Happy Travellers"
+  }
+}
+```
+
+---
 ## Further Improvements and Considerations
 
 ### Architecture & Modularity
