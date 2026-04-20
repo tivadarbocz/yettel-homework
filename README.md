@@ -180,7 +180,7 @@ Designed for low bandwidth and fast rendering.
 
 * Implement resilience patterns for downstream communication:
   * Retry mechanisms
-  * Circuit breaker (Resilience4j, Hytrix)
+  * Circuit breaker (Resilience4j, Hystrix)
   * Timeouts and fallback strategies
 * Provide fallback responses(2nd best response) where applicable (e.g. cached data using Redis)
 
