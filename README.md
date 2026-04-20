@@ -153,3 +153,4 @@ The system follows a microservice architecture where the **Digital Gateway** act
 * Enable response compression (GZIP)
 * Optimize payload size (especially for mobile clients)
 * Introduce caching where appropriate (e.g. Redis)
+* Rate limiting
