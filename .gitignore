@@ -1,0 +1,49 @@
+# OS
+.zprofile
+
+# Build output
+**/target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Logs
+*.log
+
+# Maven Wrapper
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+!/.mvn/
+!/mvnw
+!/mvnw.cmd
+
+# IDE - Eclipse / STS
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings/
+**/.springBeans
+**/.sts4-cache
+
+# IntelliJ
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+
+# NetBeans
+**/nbproject/private/
+**/nbbuild/
+**/dist/
+**/nbdist/
+**/.nb-gradle/
+**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code
+**/.vscode/
+
+# Misc
+HELP.md

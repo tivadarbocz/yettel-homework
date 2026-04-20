@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  customer-management-service:
+    build: ./customer-management-service
+    ports:
+      - "8081:8081"
+
+  digital-gateway-service:
+    build: ./digital-gateway-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - customer-management-service

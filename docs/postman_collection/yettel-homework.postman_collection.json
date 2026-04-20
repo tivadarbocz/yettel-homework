@@ -1,0 +1,238 @@
+{
+  "info": {
+    "_postman_id": "696808e5-b7f5-4fc7-8e03-c0a34a0a8bd6",
+    "name": "yettel-homework",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2547494"
+  },
+  "item": [
+    {
+      "name": "customer-management-service",
+      "item": [
+        {
+          "name": "Delete customer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/customer/a23ce4e9-e9ec-4041-9d8a-a09ed5267c50",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "customer",
+                "a23ce4e9-e9ec-4041-9d8a-a09ed5267c50"
+              ]
+            },
+            "description": "Generated from cURL: curl --location --request DELETE 'http://localhost:8081/customer/1'"
+          },
+          "response": []
+        },
+        {
+          "name": "Create customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"Customer\",\n    \"name\": \"Moon Football Club2\",\n    \"description\": \"Test customer2\",\n    \"engagedPartyId\": \"f86bac71-d1c2-4455-994b-be3223c1548a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/customer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "customer"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8081/customer'\n--header 'Content-Type: application/json'\n--data '{\n\"typeValue\": \"Customer\",\n\"name\": \"Moon Football Club\",\n\"description\": \"Test customer\",\n\"engagedParty\": {\n\"id\": \"500\",\n\"typeValue\": \"Organization\",\n\"name\": \"Happy Travellers\"\n}\n}'"
+          },
+          "response": []
+        },
+        {
+          "name": "Get customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/customer/a23ce4e9-e9ec-4041-9d8a-a09ed5267c50",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "customer",
+                "a23ce4e9-e9ec-4041-9d8a-a09ed5267c50"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8081/customer/1'"
+          },
+          "response": []
+        },
+        {
+          "name": "Update customer",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"Customer\",\n    \"name\": \"Moon Football Club3\",\n    \"description\": \"Test customer2\",\n    \"engagedPartyId\": \"f86bac71-d1c2-4455-994b-be3223c1548a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/customer/a23ce4e9-e9ec-4041-9d8a-a09ed5267c50",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "customer",
+                "a23ce4e9-e9ec-4041-9d8a-a09ed5267c50"
+              ]
+            },
+            "description": "Generated from cURL: curl --location --request PATCH 'http://localhost:8081/customer/1'\n--header 'Content-Type: application/json'\n--data '{\n\"name\": \"Updated Customer Name\",\n\"engagedParty\": {\n\"id\": \"501\",\n\"typeValue\": \"Organization\",\n\"name\": \"Updated Party\"\n}\n}'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "digital-gateway-service",
+      "item": [
+        {
+          "name": "Get Customer - MOBILE",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Platform",
+                "value": "MOBILE"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/customers/d143bd42-f510-4328-950c-8ef253550c26",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "d143bd42-f510-4328-950c-8ef253550c26"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/customers/1'\n--header 'X-Platform: MOBILE'"
+          },
+          "response": []
+        },
+        {
+          "name": "Get customer - DEFAULT",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/customers/5ad3ef61-4961-405a-bf48-fa538a3ea871",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "5ad3ef61-4961-405a-bf48-fa538a3ea871"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/customers/1'"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer - CONSOLE",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Platform",
+                "value": "CONSOLE"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/customers/d143bd42-f510-4328-950c-8ef253550c26",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "d143bd42-f510-4328-950c-8ef253550c26"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/customers/1'\n--header 'X-Platform: CONSOLE'"
+          },
+          "response": []
+        },
+        {
+          "name": "GET Customer - WEB",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Platform",
+                "value": "WEB"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/customers/d143bd42-f510-4328-950c-8ef253550c26",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "d143bd42-f510-4328-950c-8ef253550c26"
+              ]
+            },
+            "description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/customers/1'\n--header 'X-Platform: WEB'"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
